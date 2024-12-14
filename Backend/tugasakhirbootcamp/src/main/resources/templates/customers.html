@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Customer List</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Credit Score</th>
+            <th>Age</th>
+            <th>Tenure</th>
+            <th>Balance</th>
+            <th>Vehicle Type</th>
+            <th>Installment Amount</th>
+            <th>Payment History</th>
+            <th>Risk Score</th>
+            <th>Risk Cluster</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customerPage.content}">
+            <td th:text="${customer.customerId}">ID</td>
+            <td th:text="${customer.creditScore}">Credit Score</td>
+            <td th:text="${customer.age}">Age</td>
+            <td th:text="${customer.tenure}">Tenure</td>
+            <td th:text="${customer.balance}">Balance</td>
+            <td th:text="${customer.vehicleType}">Vehicle Type</td>
+            <td th:text="${customer.installmentAmount}">Installment</td>
+            <td th:text="${customer.paymentHistory}">Payment History</td>
+            <td th:text="${customer.riskScore}">Risk Score</td>
+            <td th:text="${customer.riskCluster}">Risk Cluster</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <!-- Tombol untuk halaman sebelumnya -->
+            <li class="page-item" th:classappend="${currentPage == 0} ? 'disabled'">
+                <a class="page-link" th:href="@{/customers(page=${currentPage - 1}, size=${customerPage.size})}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <!-- Nomor halaman dengan batas 5 nomor -->
+            <li th:each="i : ${#numbers.sequence(
+                    currentPage - 2 < 0 ? 0 : currentPage - 2,
+                    currentPage + 2 >= totalPages ? totalPages - 1 : currentPage + 2)}"
+                th:classappend="${i == currentPage} ? 'active'" class="page-item">
+                <a class="page-link" th:href="@{/customers(page=${i}, size=${customerPage.size})}"
+                   th:text="${i + 1}">1</a>
+            </li>
+
+            <!-- Tombol untuk halaman berikutnya -->
+            <li class="page-item" th:classappend="${currentPage == totalPages - 1} ? 'disabled'">
+                <a class="page-link" th:href="@{/customers(page=${currentPage + 1}, size=${customerPage.size})}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

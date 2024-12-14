@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">tugasakhirbootcampandroid</string>
+    <string-array name="vehicle_types">
+        <item>Car</item>
+        <item>Motorcycle</item>
+    </string-array>
+</resources>

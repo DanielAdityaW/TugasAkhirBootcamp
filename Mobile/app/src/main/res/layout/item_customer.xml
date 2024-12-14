@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="0dp">
+
+    <TextView
+        android:id="@+id/tvCustomerId"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Customer ID"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvCreditScore"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Credit Score"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Age"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvTenure"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Tenure"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvBalance"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Balance"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvVehicleType"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Vehicle Type"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvInstallmentAmount"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Installment Amount"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvPaymentHistory"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Payment History"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvRiskScore"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Risk Score"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:id="@+id/tvRiskCluster"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="Risk Cluster"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"/>
+
+</LinearLayout>
