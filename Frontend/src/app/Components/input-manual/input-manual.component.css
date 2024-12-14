@@ -1,0 +1,35 @@
+/* Adjusting the content to be slightly above center */
+.container-fluid {
+  padding-top: 50px;  /* Adjust the top padding as needed */
+}
+
+header h2 {
+  color: black;  /* Set title color to black */
+}
+
+/* Class for Low Risk */
+.low-risk {
+  background-color: #d4edda; /* Light Green */
+  color: #155724; /* Dark Green */
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #c3e6cb;
+}
+
+/* Class for Medium Risk */
+.medium-risk {
+  background-color: #fff3cd; /* Light Yellow */
+  color: #856404; /* Dark Yellow */
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ffeeba;
+}
+
+/* Class for High Risk */
+.high-risk {
+  background-color: #f8d7da; /* Light Red */
+  color: #721c24; /* Dark Red */
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #f5c6cb;
+}

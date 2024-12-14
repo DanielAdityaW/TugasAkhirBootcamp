@@ -1,0 +1,38 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Racing+Sans+One&display=swap" rel="stylesheet">
+
+<div class="top-bar navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="container-fluid">
+    <div class="navbar-brand racing-sans-one-regular">
+      <i class="fas fa-tachometer-alt"></i> My Risk Scoring
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/table" routerLinkActive="active">
+            <i class="fas fa-table"></i> Table
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/upload-excel" routerLinkActive="active">
+            <i class="fas fa-file-upload"></i> Upload Excel
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/input-manual" routerLinkActive="active">
+            <i class="fas fa-keyboard"></i> Input Manual
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

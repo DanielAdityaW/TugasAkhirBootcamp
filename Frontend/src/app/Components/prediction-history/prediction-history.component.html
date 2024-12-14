@@ -1,0 +1,15 @@
+<div class="history-log-container">
+    <h5>Prediction History</h5>
+  
+    <div *ngIf="historyLogs.length > 0" class="history-cards-container">
+      <div *ngFor="let log of historyLogs" class="history-card">
+        <div class="history-card-body">
+            <strong>Start Update:</strong> {{ log.startTime | date: 'short' }}<br>
+            <strong>Finish Update:</strong> {{ log.endTime | date: 'short' }} <br>
+            <strong>Status:</strong> {{ log.status }}
+        </div>
+      </div>
+    </div>
+  
+    <p *ngIf="historyLogs.length === 0" class="no-history-text">No prediction history found.</p>
+</div>

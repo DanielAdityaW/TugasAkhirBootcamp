@@ -1,0 +1,156 @@
+<app-navbar></app-navbar>
+<div class="container-fluid vh-100 d-flex align-items-start justify-content-center">
+  <div class="w-100" style="max-width: 1200px;">
+    <header class="text-start mb-4">
+      <h2 class="text-dark">
+         Manual Prediction Input
+      </h2>
+    </header>
+
+    <form (ngSubmit)="onSubmit()" class="p-3 border border-dark rounded shadow-sm bg-light">
+      <div class="row">
+        <!-- Credit Score Input -->
+        <div class="col-md-4 mb-3">
+          <label for="creditScore" class="form-label">Credit Score:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+            <input
+              type="number"
+              id="creditScore"
+              class="form-control"
+              [(ngModel)]="inputData['Credit Score']"
+              name="creditScore"
+              required
+              placeholder="Enter Credit Score"
+            />
+          </div>
+        </div>
+
+        <!-- Age Input -->
+        <div class="col-md-4 mb-3">
+          <label for="age" class="form-label">Age:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input
+              type="number"
+              id="age"
+              class="form-control"
+              [(ngModel)]="inputData['Age']"
+              name="age"
+              required
+              placeholder="Enter Age"
+            />
+          </div>
+        </div>
+
+        <!-- Tenure Input -->
+        <div class="col-md-4 mb-3">
+          <label for="tenure" class="form-label">Tenure:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+            <input
+              type="number"
+              id="tenure"
+              class="form-control"
+              [(ngModel)]="inputData['Tenure']"
+              name="tenure"
+              required
+              placeholder="Enter Tenure"
+            />
+          </div>
+        </div>
+
+        <!-- Balance Input -->
+        <div class="col-md-4 mb-3">
+          <label for="balance" class="form-label">Balance:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-money-bill"></i></span>
+            <input
+              type="number"
+              id="balance"
+              class="form-control"
+              [(ngModel)]="inputData['Balance']"
+              name="balance"
+              required
+              placeholder="Enter Balance"
+            />
+          </div>
+        </div>
+
+        <!-- Vehicle Type Input -->
+        <div class="col-md-4 mb-3">
+          <label for="vehicleType" class="form-label">Vehicle Type:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-car"></i></span>
+            <select
+              id="vehicleType"
+              class="form-select"
+              [(ngModel)]="inputData['Vehicle Type']"
+              name="vehicleType"
+              required
+            >
+              <option value="" disabled>Select Vehicle Type</option>
+              <option value="Car">Car</option>
+              <option value="Motorcycle">Motorcycle</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Installment Amount Input -->
+        <div class="col-md-4 mb-3">
+          <label for="installmentAmount" class="form-label">Installment Amount:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-file-invoice-dollar"></i></span>
+            <input
+              type="number"
+              id="installmentAmount"
+              class="form-control"
+              [(ngModel)]="inputData['Installment Amount']"
+              name="installmentAmount"
+              required
+              placeholder="Enter Installment Amount"
+            />
+          </div>
+        </div>
+
+        <!-- Payment History Input -->
+        <div class="col-md-4 mb-3">
+          <label for="paymentHistory" class="form-label">Payment History:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-history"></i></span>
+            <input
+              type="number"
+              id="paymentHistory"
+              class="form-control"
+              [(ngModel)]="inputData['Payment History']"
+              name="paymentHistory"
+              required
+              placeholder="Enter Payment History"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary px-4">
+          <i class="fas fa-paper-plane"></i> Get Result
+        </button>
+      </div>
+    </form>
+
+    <!-- Display Results -->
+    <!-- Display Results -->
+  <div *ngIf="result" class="mt-4" [ngClass]="getRiskClass(result.predictedRisk)">
+    <h3><i class="fas fa-check-circle"></i> Prediction Results:</h3>
+    <p><strong>Risk Cluster:</strong> {{ result.predictedRisk }}</p>
+    <p><strong>Risk Score:</strong> {{ result.predictedRiskScore }}</p>
+  </div>
+
+
+    <!-- Display Error Message -->
+    <div *ngIf="errorMessage" class="mt-4 alert alert-danger">
+      <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+/* Styling for top-bar using Bootstrap and Font Awesome */
+.top-bar {
+  background-color: #343a40; /* Dark background for top bar */
+  color: white;
+  padding: 10px 20px;
+}
+
+/* Navbar styles */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px; /* Spacing between menu items */
+}
+
+.navbar-nav .nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #495057; /* Hover effect */
+  color: #007bff;
+}
+
+/* Active link styling */
+.nav-link.active {
+  font-weight: bold;
+  color: #007bff; /* Blue color for active link */
+}
+
+/* Adding Font Awesome icons to the top bar */
+.navbar-nav .nav-link i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+/* Responsive styling: Adjusting layout for smaller screens */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack nav items vertically on smaller screens */
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 0; /* Remove right margin for stacked items */
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+
+<div class="wrapper d-flex">
+  <!-- Sidebar -->
+  <div class="sidebar bg-light p-3">
+    <app-prediction-history></app-prediction-history>
+  </div>
+
+  <!-- Main container -->
+  <div class="container-fluid">
+    <h1 class="text-start mb-4 text-dark">Customer List</h1>
+
+    <!-- Controls Container for Search, Sort, and Filter (Horizontal Layout) -->
+    <div class="row mb-4">
+      <!-- Search bar for Customer ID -->
+      <div class="col-md-4 col-sm-12 mb-2"> <!-- Adjusted the width here -->
+        <div class="input-group">
+          <span class="input-group-text">Search by Customer ID:</span>
+          <input type="text" id="customerId" [(ngModel)]="searchQuery" (input)="onSearchChange()" placeholder="Enter Customer ID" class="form-control">
+        </div>
+      </div>
+
+      <!-- Dropdown for Sorting -->
+      <div class="col-md-4 col-sm-12 mb-2">
+        <div class="input-group">
+          <span class="input-group-text"> Sort by Risk Score:</span>
+          <select id="sortOrder" (change)="onSortChange($event)" class="form-select">
+            <option value="desc">Highest Risk Score</option>
+            <option value="asc">Lowest Risk Score</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Dropdown for Vehicle Type Filter -->
+      <div class="col-md-4 col-sm-12 mb-2">
+        <div class="input-group">
+          <span class="input-group-text">Filter by Vehicle Type:</span>
+          <select id="vehicleType" (change)="onVehicleTypeChange($event)" class="form-select">
+            <option value="car">Car</option>
+            <option value="motorcycle">Motorcycle</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Customer ID</th>
+            <th>Credit Score</th>
+            <th>Age</th>
+            <th>Tenure</th>
+            <th>Balance</th>
+            <th>Vehicle Type</th>
+            <th>Installment Amount</th>
+            <th>Payment History</th>
+            <th>Risk Score</th>
+            <th>Risk Cluster</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{ customer.customerId }}</td>
+            <td>{{ customer.creditScore }}</td>
+            <td>{{ customer.age }}</td>
+            <td>{{ customer.tenure }}</td>
+            <td>{{ customer.balance }}</td>
+            <td>{{ customer.vehicleType }}</td>
+            <td>{{ customer.installmentAmount }}</td>
+            <td>{{ customer.paymentHistory }}</td>
+            <td>{{ customer.riskScore }}</td>
+            <td>{{ customer.riskCluster }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+        <!-- Pagination Section -->
+    <!-- Pagination Section -->
+    <div class="pagination-container d-flex justify-content-start align-items-center mt-2 mb-4">
+      <!-- First and Previous Button Group -->
+      <button class="btn btn-outline-secondary btn-lg me-2" [class.disabled]="currentPage === 0" (click)="goToFirstPage()">
+        <i class="fas fa-angle-double-left"></i> First
+      </button>
+
+      <button class="btn btn-outline-secondary btn-lg me-2" [class.disabled]="currentPage === 0" (click)="changePage(currentPage - 1)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- Page Numbers Display -->
+      <span class="page-info mx-3">
+        Page {{ currentPage + 1 }} of {{ totalPages }}
+      </span>
+
+      <!-- Next and Last Button Group -->
+      <button class="btn btn-outline-secondary btn-lg ms-2" [class.disabled]="currentPage === totalPages - 1" (click)="changePage(currentPage + 1)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <button class="btn btn-outline-secondary btn-lg ms-2" [class.disabled]="currentPage === totalPages - 1" (click)="goToLastPage()">
+        Last <i class="fas fa-angle-double-right"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
